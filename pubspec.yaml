@@ -1,0 +1,48 @@
+name: vyapar_app
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  smooth_page_indicator: ^1.2.0+3
+  signature: ^5.5.0
+  dropdown_textfield: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/flag.png
+    - assets/images/google.png
+    - assets/images/slider1.jpg
+    - assets/images/slider2.jpg
+    - assets/images/slider3.jpg
+    - assets/images/party.jpg
+    - assets/images/transaction.jpg
+    - assets/images/dashboard.jpg
+    - assets/images/items.jpg
+    - assets/images/menu.jpg
+    - assets/images/profile.jpg
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/font/Roboto-Regular.ttf
+        - asset: assets/font/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/font/Roboto-Medium.ttf
+          weight: 500
