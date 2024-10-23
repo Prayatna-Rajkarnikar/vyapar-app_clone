@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar_app/screens/add_party.dart';
+import 'package:vyapar_app/screens/notifications.dart';
 import 'package:vyapar_app/screens/profile.dart';
 import 'package:vyapar_app/screens/sale.dart';
+import 'package:vyapar_app/screens/settings.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key, this.showBottomNav = false});
+
   final bool showBottomNav;
 
-  const HomeScreen({super.key, this.showBottomNav = false});
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -24,17 +27,32 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(fontWeight: FontWeight.w500),
         ),
         backgroundColor: Colors.white,
-        actions: const [
-          Icon(Icons.notifications_none),
-          SizedBox(width: 10),
-          Icon(Icons.settings),
-          SizedBox(width: 10),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notifications()),
+              );
+            },
+            icon: const Icon(Icons.notifications_none),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Settings()),
+              );
+            },
+            icon: const Icon(Icons.settings),
+          ),
+          const SizedBox(width: 10),
         ],
         leading: InkWell(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileScreen()),
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           },
           child: const Icon(Icons.person),
@@ -138,8 +156,10 @@ class TransactionDetailsScreen extends StatelessWidget {
               ),
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SaleScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SaleScreen()));
                 },
                 label: const Text(
                   'Add New Sale',
@@ -183,8 +203,10 @@ class PartyDetailsScreen extends StatelessWidget {
               ),
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AddParty()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddParty()));
                 },
                 label: const Text(
                   'Add New Party',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar_app/screens/notifications.dart';
 
 class FirstInvoice extends StatelessWidget {
   const FirstInvoice({super.key});
@@ -6,15 +7,28 @@ class FirstInvoice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           "Prayatna Rajkarnikar",
           style: TextStyle(fontWeight: FontWeight.w500),
         ),
         leading: const Icon(Icons.menu),
-        actions: const [
-          Icon(Icons.notifications),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notifications()),
+              );
+            },
+            icon: const Icon(Icons.notifications_none),
+          ),
+          const SizedBox(
+            width: 15,
+          ),
         ],
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),

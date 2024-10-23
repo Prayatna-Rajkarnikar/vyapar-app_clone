@@ -37,6 +37,8 @@ flutter:
     - assets/images/items.jpg
     - assets/images/menu.jpg
     - assets/images/profile.jpg
+    - assets/images/app_n.jpg
+    - assets/images/transaction_n.jpg
 
   fonts:
     - family: Roboto

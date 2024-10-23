@@ -3,11 +3,12 @@ import 'package:signature/signature.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key, this.showBottomNav = false});
+
   final bool showBottomNav;
 
-  const ProfileScreen({super.key, this.showBottomNav = false});
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {

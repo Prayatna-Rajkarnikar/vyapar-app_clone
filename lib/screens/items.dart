@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar_app/screens/add_item.dart';
+import 'package:vyapar_app/screens/notifications.dart';
 import 'package:vyapar_app/screens/profile.dart';
+import 'package:vyapar_app/screens/settings.dart';
 
 class ItemScreen extends StatelessWidget {
   const ItemScreen({super.key});
@@ -15,17 +17,32 @@ class ItemScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w500),
         ),
         backgroundColor: Colors.white,
-        actions: const [
-          Icon(Icons.notifications_none),
-          SizedBox(width: 10),
-          Icon(Icons.settings),
-          SizedBox(width: 10),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notifications()),
+              );
+            },
+            icon: const Icon(Icons.notifications_none),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Settings()),
+              );
+            },
+            icon: const Icon(Icons.settings),
+          ),
+          const SizedBox(width: 10),
         ],
         leading: InkWell(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileScreen()),
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           },
           child: const Icon(Icons.person),
@@ -49,8 +66,10 @@ class ItemScreen extends StatelessWidget {
                     ),
                     child: FloatingActionButton.extended(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AddItem()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddItem()));
                       },
                       label: const Text(
                         'Add New Item',

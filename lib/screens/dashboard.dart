@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:vyapar_app/screens/notifications.dart';
 import 'package:vyapar_app/screens/profile.dart';
 import 'package:vyapar_app/screens/sale.dart';
+import 'package:vyapar_app/screens/settings.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -15,17 +17,32 @@ class DashboardScreen extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.w500),
         ),
         backgroundColor: Colors.white,
-        actions: const [
-          Icon(Icons.notifications_none),
-          SizedBox(width: 10),
-          Icon(Icons.settings),
-          SizedBox(width: 10),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notifications()),
+              );
+            },
+            icon: const Icon(Icons.notifications_none),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Settings()),
+              );
+            },
+            icon: const Icon(Icons.settings),
+          ),
+          const SizedBox(width: 10),
         ],
         leading: InkWell(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileScreen()),
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           },
           child: const Icon(Icons.person),
@@ -47,8 +64,10 @@ class DashboardScreen extends StatelessWidget {
               ),
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SaleScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SaleScreen()));
                 },
                 label: const Text(
                   'Add Sale Now',
