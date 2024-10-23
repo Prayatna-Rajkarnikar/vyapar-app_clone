@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar_app/screens/notifications.dart';
 
 class FirstInvoice extends StatelessWidget {
   const FirstInvoice({super.key});
@@ -17,10 +16,7 @@ class FirstInvoice extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Notifications()),
-              );
+              Navigator.pushNamed(context, 'notifications');
             },
             icon: const Icon(Icons.notifications_none),
           ),

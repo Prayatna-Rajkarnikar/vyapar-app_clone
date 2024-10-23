@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar_app/screens/notifications.dart';
-import 'package:vyapar_app/screens/profile.dart';
-import 'package:vyapar_app/screens/settings.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -19,19 +16,13 @@ class MenuScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Notifications()),
-              );
+              Navigator.pushNamed(context, 'notifications');
             },
             icon: const Icon(Icons.notifications_none),
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Settings()),
-              );
+              Navigator.pushNamed(context, 'settings');
             },
             icon: const Icon(Icons.settings),
           ),
@@ -39,10 +30,7 @@ class MenuScreen extends StatelessWidget {
         ],
         leading: InkWell(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            );
+            Navigator.pushNamed(context, 'profile');
           },
           child: const Icon(Icons.person),
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar_app/screens/sign_up.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SlideshowScreen extends StatefulWidget {
@@ -56,10 +55,7 @@ class _SlideshowScreenState extends State<SlideshowScreen> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Signup()),
-                      );
+                      Navigator.pushReplacementNamed(context, 'signup');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent[700],

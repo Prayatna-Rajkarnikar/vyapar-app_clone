@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar_app/screens/add_item.dart';
-import 'package:vyapar_app/screens/notifications.dart';
-import 'package:vyapar_app/screens/profile.dart';
-import 'package:vyapar_app/screens/settings.dart';
 
 class ItemScreen extends StatelessWidget {
   const ItemScreen({super.key});
@@ -20,19 +16,13 @@ class ItemScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Notifications()),
-              );
+              Navigator.pushNamed(context, 'notifications');
             },
             icon: const Icon(Icons.notifications_none),
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Settings()),
-              );
+              Navigator.pushNamed(context, 'settings');
             },
             icon: const Icon(Icons.settings),
           ),
@@ -40,10 +30,7 @@ class ItemScreen extends StatelessWidget {
         ],
         leading: InkWell(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            );
+            Navigator.pushNamed(context, 'profile');
           },
           child: const Icon(Icons.person),
         ),
@@ -66,10 +53,7 @@ class ItemScreen extends StatelessWidget {
                     ),
                     child: FloatingActionButton.extended(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AddItem()));
+                        Navigator.pushNamed(context, 'addItem');
                       },
                       label: const Text(
                         'Add New Item',

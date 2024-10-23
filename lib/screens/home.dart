@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vyapar_app/screens/add_party.dart';
-import 'package:vyapar_app/screens/notifications.dart';
-import 'package:vyapar_app/screens/profile.dart';
-import 'package:vyapar_app/screens/sale.dart';
-import 'package:vyapar_app/screens/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, this.showBottomNav = false});
@@ -30,19 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Notifications()),
-              );
+              Navigator.pushNamed(context, 'notifications');
             },
             icon: const Icon(Icons.notifications_none),
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Settings()),
-              );
+              Navigator.pushNamed(context, 'settings');
             },
             icon: const Icon(Icons.settings),
           ),
@@ -50,10 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         leading: InkWell(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            );
+            Navigator.pushNamed(context, 'profile');
           },
           child: const Icon(Icons.person),
         ),
@@ -156,10 +143,7 @@ class TransactionDetailsScreen extends StatelessWidget {
               ),
               child: FloatingActionButton.extended(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SaleScreen()));
+                  Navigator.pushNamed(context, 'sale');
                 },
                 label: const Text(
                   'Add New Sale',

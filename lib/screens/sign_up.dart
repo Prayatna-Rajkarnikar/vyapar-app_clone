@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vyapar_app/screens/invoice.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -93,10 +92,7 @@ class Signup extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FirstInvoice()));
+                  Navigator.pushNamed(context, 'invoice');
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 208, 206, 226),
@@ -116,10 +112,7 @@ class Signup extends StatelessWidget {
               height: 50,
               child: ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FirstInvoice()));
+                  Navigator.pushNamed(context, 'invoice');
                 },
                 icon: Image.asset('assets/images/google.png', height: 18),
                 label: Text(
